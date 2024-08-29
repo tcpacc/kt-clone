@@ -1,0 +1,872 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body
+{
+    background-color: #fff;
+    animation: FadeIn 1s 0s backwards;
+}
+
+@keyframes FadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.nav-container
+{
+    padding-right: 30px;
+    padding-left: 30px;
+    height: 12.5vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+.index-container
+{
+    width: 100%;
+    background-color: white;
+}
+
+.nav-container > .inner
+{
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.nav-container > .inner > .logo
+{
+    margin-left: 5%;
+    margin-bottom: 10px;
+    width: 259px;
+    height: 60px;
+}
+
+.nav-container > .inner > .menu-list
+{
+    width: 70%;
+    margin-left: 114px;
+    display: flex;
+    gap: 60px;
+}
+
+.nav-container > .inner > .menu-list > .menu-list-inner > img
+{
+    width: 2.5rem;
+    height: 2rem;
+}
+
+
+.nav-container > .inner > .menu-list a
+{
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1rem;
+    color: rgba(204,0,0,255);
+}
+
+.nav-container > .inner > .menu-list .menu-list-inner
+{
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-container > .inner > .search
+{
+    margin-right: 100px;
+}
+
+.slides-container {
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    height: 97.5vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    /* cursor: grab; */
+    position: relative;
+  }
+
+.slides-container-slides
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.slides-container-slides > .slides-nav
+{
+    margin-bottom: 10px;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-end;
+    position: absolute;
+    align-self: center;
+    width: 100px;
+    height: 16px;
+}
+
+.slides-container-slides > .slides-nav > span
+{
+    cursor: pointer;
+    display: inline-block;
+    background-color: white;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+}
+
+.slides-container.active{
+    /* cursor: grabbing; */
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.slides
+{
+    scroll-snap-align: start;
+    flex: 1 0 100%;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    /* mask: linear-gradient( white 75%, transparent); */
+}
+
+.slide{
+    height: 97.5vh;
+    width: 100%;
+    /* mask: linear-gradient(270deg, white 40%, transparent); */
+    background-size: cover;
+    height: 97.5vh;
+    /* width: 40%; */
+    background-position: center;
+}
+
+.slide.uno
+{
+    background-image: url('RTK8-HomePage_0712-1900x950.jpg');
+}
+
+.slide.dos
+{
+    background-image: url('FT2-GamePage_0619-1900x950.jpg');
+}
+
+.slide.tres
+{
+    background-image: url("HomePage_Hero-DWO-scaled-1-1900x950.jpg");
+}
+
+.slide.quatro
+{
+    background-image: url("WoLongCE_MainBanner-1900x950.jpg");
+}
+
+.slide.cinco
+{
+    background-image: url("Hero-FSR-1900x950.jpg");
+}
+
+.slide > .inner-text
+{
+    position: absolute;
+    bottom: 0;
+    margin-left: 8vw;
+    width: 40%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+
+.slide > .inner-text > h1
+{
+    font-size: 3rem;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.slide.dos > .inner-text > h1
+{
+    /* line-height: 1000%; */
+    align-self: flex-start;
+}
+
+.slide > .inner-text > p
+{
+    font-size: 1.5rem;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.slide > .inner-text > a
+{
+    align-self: flex-start;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 700;
+    min-width: 237px;
+    min-height: 60px;
+    background-color: rgba(204,0,0,255);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.coming-soon-container-container
+{
+    padding-block: 60px;
+    background-color: rgba(246,246,246,255);
+    width: 100%;
+    height: 100vh;
+}
+
+.coming-soon-container
+{
+    gap: 20px;
+    height: 100%;
+    padding-inline: 7.5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.coming-soon-container > h1
+{
+    line-height: 150%;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.cards-grid-coming
+{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    gap: 40px;
+
+}
+
+.card-cell
+{
+    height: 96%;
+    width: 23%;
+}
+
+.card-card
+{
+    text-decoration: none;
+    position: relative;
+    box-shadow: 0 4px 22px rgba(0, 0, 0, .16);
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 8%;
+    background-color: #fff;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card-card:hover
+{
+    background-color: black;
+    scale: 1.03;
+}
+
+.card-card:hover .card-content > h1
+{
+    color: white;
+}
+
+.card-card:hover .card-content > span
+{
+    color: white;
+}
+
+.card-badge
+{
+    font-size: 0.9rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255,203,62,255);
+    width: 107.45px;
+    height: 30px;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: black;
+}
+
+.card-image
+{
+    width: 100%;
+    height: 70%;
+}
+
+.card-content
+{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+    height: 25%;
+    padding-inline: 20px;
+    padding-block: 17px;
+}
+
+.card-content > h1
+{
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: black;
+}
+
+.card-content > span
+{
+    font-size: 0.9rem;
+    color: rgba(112,112,112,255);
+}
+
+.card-categories > span
+{
+    font-size: 0.9rem;
+    padding-inline: 7px;
+    color: rgba(112,112,112,255);
+}
+
+.card-categories > .not-first-span
+{
+    border-left: 1px solid red;
+}
+
+.recent-and-best
+{
+    height: 330vh;
+    width: 100%;
+    margin-block: 120px;
+    background-color: #fff;
+}
+
+.recent-and-best-container
+{
+    width: 100%;
+    height: 100%;
+    padding-inline: 7.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cards-grid
+{
+    height: 100%;
+    width: 100%; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.recent-and-best-container > h1
+{
+    height: fit-content;
+}
+
+.card-cell-big
+{
+    height: 65vh;
+    width: 100%;
+}
+
+.card-card-big
+{
+    text-decoration: none;
+    position: relative;
+    box-shadow: 0 4px 22px rgba(0, 0, 0, .16);
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 8%;
+    background-color: #fff;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card-card-big:hover
+{
+    background-color: black;
+}
+
+.card-card-big:hover .card-content-big > h1
+{
+    color: white;
+}
+
+.card-card-big:hover .card-content-big > p
+{
+    color: white;
+}
+
+.card-card-big > img
+{
+    width: 60%;
+    height: 100%;
+}
+
+.card-card-big > .card-badge{
+    background-color: #202020;
+    color: white;
+    width: 141px;
+    height: 30px;
+}
+
+.card-content-big
+{
+    width: 40%;
+    height: 100%;
+    padding-inline: 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.best
+{
+    margin-top: 120px;
+}
+
+.card-content-big > h1
+{
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+}
+
+.card-content-big > p
+{
+    font-size: 1.05rem;
+    color: black;
+}
+
+.button
+{
+    border: none;
+    background-color:rgba(204,0,0,255) ;
+    color: white;
+    cursor: pointer;
+    width: 180px;
+    height: 60px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.recent > .card-cell
+{
+    gap: 35px;
+    height:75vh ;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.recent > .card-cell > .card-card > .card-badge
+{
+    background-color: #202020;
+    color: white;
+    width: 141px;
+    height: 30px;
+}
+
+.recent
+{
+    margin-bottom: 120px;
+}
+
+.whats-new
+{
+    height: 180vh;
+    width: 100%;
+    background-color: rgba(246,246,246,255);
+    padding-block: 120px;
+}
+
+.footer-main
+{
+    padding: 78px 0px 38px;
+    width: 100%;
+    height: 45vh;
+    background-color: rgba(32,32,32,255);
+}
+
+.footer-main-inner
+{
+    padding-inline: 7vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-main-left > img
+{
+    width: 85px;
+    height: 54px;
+}
+
+
+
+.whats-new-container
+{
+    height: 100%;
+    width: 100%;
+    padding-inline: 7.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.right-whats-new
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.whats-new-header
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-whats-new > h1
+{
+    font-size: 1.05rem;
+}
+
+.left-whats-new
+{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    
+}
+
+.left-whats-new > img
+{
+    position: relative;
+    left: 0px;
+    transition: 0.3s;
+}
+
+.left-whats-new:hover> img
+{
+    left: 10px;
+}
+
+.cards-cell-new-big
+{
+    width: 66.6%;
+    height: 80vh;
+}
+
+.card-card-new-big
+{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 5%;
+    overflow: hidden;
+    box-shadow: 0 4px 22px rgba(0, 0, 0, .16);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.card-card-new-big:hover
+{
+    scale: 1.05;
+    background-color: black;
+}
+
+.card-card-new-big:hover .card-title
+{
+    color: white;
+}
+
+.card-card-new-big:hover .date
+{
+    color: white;
+}
+
+.card-card-new-big > img
+{
+    height: 60%;
+    width: 100%;
+}
+
+.card-content-new-big
+{
+    gap: 20px;
+    padding: 40px;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content-new-big > .heading
+{
+    align-self: flex-start;
+    display: flex;
+    gap: 40px;
+}
+
+.card-content-new-big > .heading > .card-categories
+{
+    display: flex;
+
+}
+
+.date
+{
+    color: rgba(112,112,112,255);
+    font-size: 0.8rem;
+}
+
+.card-title
+{
+    font-weight: 700;
+    font-size: 2rem;
+    color: black;
+}
+
+.cards-cell-new-first
+{
+    padding-left: 35px;
+    width: 33.3%;
+    height: 80vh;
+}
+
+.cards-cell-new
+{
+    padding-inline:17.5px;
+    margin-top: 35px;
+    width: 33.3%;
+    height: 80vh;
+}
+
+.cards-grid-new
+{
+    height: 100%;
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card-card-new
+{
+    cursor: pointer;
+    box-shadow: 0 4px 22px rgba(0, 0, 0, .16);
+    border-radius: 10%;
+    height: 65%;
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.card-card-new:hover
+{
+    background-color: black;
+    scale: 1.05;
+}
+
+.card-card-new:hover .card-title
+{
+    color: #fff;
+}
+
+.card-card-new:hover .date
+{
+    color: #fff;
+}
+
+.card-card-new > .card-content
+{
+    padding: 16px 20px;
+}
+
+.footer-main-menu
+{
+    display: flex;
+}
+
+ul
+{
+    line-height: 3;
+}
+
+li
+{
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    list-style-type: none;
+}
+.footer-main-right
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.footer-main-text
+{
+    color: rgba(255, 255, 255, .5);
+    margin-bottom: 28px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-left: 6px;
+}
+
+.footer-bottom
+{
+    padding-left:7.5vw ;
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(21,21,21,255);
+    display: flex;
+    align-items: center;
+}
+
+.copyright
+{
+    color: #838383;
+    font-size: 0.9rem;
+}
+
+.container-games
+{
+    min-height: 100vh;
+    padding-inline: 7.5vw;
+    background-color: rgba(246,246,246,255);
+}
+
+.breadcrumbs
+{
+    display: inline-block;
+    margin-top: 48px;
+}
+
+.go-home{
+    color: black;
+    opacity: 0.5;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.go-home:hover
+{
+    opacity: 1;
+}
+
+.page-title
+{
+    font-size: 3rem;
+    padding-top: 37px;
+}
+
+.filters{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 46px;
+}
+
+.filters-right
+{
+    display: flex;
+    align-content: flex-end;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.filters-right-text
+{
+    align-self: flex-end;
+    margin-right: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.filters-right-list
+{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 120px;
+}
+
+.list-content
+{
+    display: flex;
+    gap: 10px;
+}
+
+.list-category
+{
+    font-weight: 700;
+}
+
+.filters-left
+{
+    display: flex;
+}
+
+.sort-by 
+{
+    align-self: flex-end;
+}
+
+.search-games
+{
+    margin-left: 75px;
+    background-color: #eaeaea;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-games > img
+{
+    width: 24px;
+    height: 24px;
+}
