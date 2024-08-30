@@ -16,7 +16,6 @@ slider.addEventListener("mousedown", (e) => {
 })
 slider.addEventListener("mouseleave", () => {
     isDown = false;
-    //DO THIS IFHAVE ENOUGH TIME => pick the element closest to window.innerwidth using foreach in slides-container and scroll toward it by doing window.innerwidth - element.getBoundingClientRect().left(this might not work)
     slider.classList.remove("active");
     autoScroll.reset(7000);
 })

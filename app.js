@@ -3,9 +3,6 @@ const handlebars = require('express-handlebars');
 
 const app = express();
 
-// const hbs = handlebars.create();
-// hbs.handlebars.registerHelper('add', (a,b) => a+b);
-
 app.engine('handlebars', handlebars.engine());
 app.set('view engine', 'handlebars');
 

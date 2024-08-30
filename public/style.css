@@ -146,16 +146,13 @@ body
     height: 100%;
     width: 100vw;
     display: flex;
-    /* mask: linear-gradient( white 75%, transparent); */
 }
 
 .slide{
     height: 97.5vh;
     width: 100%;
-    /* mask: linear-gradient(270deg, white 40%, transparent); */
     background-size: cover;
     height: 97.5vh;
-    /* width: 40%; */
     background-position: center;
 }
 
