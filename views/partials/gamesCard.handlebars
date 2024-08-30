@@ -1,0 +1,55 @@
+<div class="cards-grid-games" style="padding-bottom: 90px;">
+    {{#each data}}
+        {{#if comingSoon}}
+            <div class="cards-grid-cell-games">
+                <a href="" class="card-card">
+                    <span class="card-badge">Coming Soon</span>
+                    <img src={{image}} alt="" class="card-image">
+                    <div class="card-content">
+                        <span class="note">{{note}}</span>
+                        <h1>{{header}}</h1>
+                        <div class="card-categories">
+                            <span class="first-span">{{firstSpan}}</span>
+                            {{#each notFirstSpan}}
+                            <span class="not-first-span">{{this}}</span>
+                            {{/each}}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {{else if recently}}
+            <div class="cards-grid-cell-games">
+                <a href="" class="card-card">
+                    <span class="recent-card-badge">Recently Released</span>
+                    <img src={{image}} alt="" class="card-image">
+                    <div class="card-content">
+                        <span class="note">{{note}}</span>
+                        <h1>{{header}}</h1>
+                        <div class="card-categories">
+                            <span class="first-span">{{firstSpan}}</span>
+                            {{#each notFirstSpan}}
+                            <span class="not-first-span">{{this}}</span>
+                            {{/each}}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {{else}}
+            <div class="cards-grid-cell-games">
+                <a href="" class="card-card">
+                    <img src={{image}} alt="" class="card-image">
+                    <div class="card-content">
+                        <span class="note">{{note}}</span>
+                        <h1>{{header}}</h1>
+                        <div class="card-categories">
+                            <span class="first-span">{{firstSpan}}</span>
+                            {{#each notFirstSpan}}
+                            <span class="not-first-span">{{this}}</span>
+                            {{/each}}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {{/if}}  
+    {{/each}}
+</div>
