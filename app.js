@@ -16,6 +16,10 @@ app.get('/support', (req,res) => {
     res.render('support');
 });
 
+app.get('/whats-new', (req,res) => {
+    res.render('whats-new');
+});
+
 app.get('/games', (req,res) => {
     const data = [
         {
