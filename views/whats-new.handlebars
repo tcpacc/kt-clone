@@ -4,7 +4,7 @@
         <span class="breadcrumbs-text">/ Whats's New</span>
         <div class="header-news">
             <h1 class="page-title">Browse News</h1>
-            <a class="add-button" href="/create-new">+ Add</a>
+            <a class="add-button" href="/add-news">+ Add</a>
         </div>
     </div>
     <div class="filters">
@@ -58,5 +58,20 @@
                     </div>
                 </div>
             </div>
+            {{#each data}}
+            <div class="cards-cell-new new-con-two">
+                <div class="card-card-new">
+                    <img src={{image}} alt="">
+                    <div class="card-content">
+                        <p class="date">{{date}}</p>
+                        <h1 class="card-title">{{header}}</h1>
+                        <div class="card-categories">
+                                <span class="first-span">{{firstSpan}}</span>
+                                <span class="not-first-span">{{notFirstSpan}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
     </div>
 </div>

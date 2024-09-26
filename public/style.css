@@ -667,7 +667,7 @@ body
 
 .cards-cell-new-first
 {
-    padding-left: 35px;
+    padding-inline: 10px;
     width: 33.3%;
     height: 80vh;
 }
@@ -682,6 +682,7 @@ body
 
 .cards-grid-new
 {
+    padding-bottom: 90px;
     height: 100%;
     width: 100%; 
     display: flex;
@@ -694,12 +695,17 @@ body
     cursor: pointer;
     box-shadow: 0 4px 22px rgba(0, 0, 0, .16);
     border-radius: 20px;
-    height: 65%;
+    height: auto;
     width: 100%;
     background-color: white;
     overflow: hidden;
     text-decoration: none;
     transition: 0.3s;
+}
+
+.card-card-new > img
+{
+    width: 100%;
 }
 
 .card-card-new:hover
@@ -1005,7 +1011,8 @@ h2
 
 .header-news > .add-button
 {
-    color: black;
+    background-color: #c00;
+    color: white;
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -1014,7 +1021,6 @@ h2
     width: 10vw;
     height: 5vh;
     border-radius: 1vh;
-    border: 1px black solid;
     transition: 0.3s;
 }
 
@@ -1026,4 +1032,77 @@ h2
 .new-con
 {
     margin-top: 40px;
+}
+
+.add-container
+{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding-inline: 120px;
+    padding-top: 48px;
+    margin-bottom: 50px;
+}
+
+.add-contanier-container
+{
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.add-text
+{
+    padding-left: 10px ;
+    font-weight: 400;
+    border-left: #c00 solid 3px;
+}
+
+.add
+{
+    font-size: 1rem;
+    font-weight: 400;
+    width: 80%;
+}
+
+.add.head
+{
+    height: 10vh;
+    box-sizing: border-box;
+}
+
+#post-news
+{
+    display: flex;
+    font-weight: 400;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    width: 10vw;
+    height: 5vh;
+    background-color: #c00;
+    border-radius: 1vh;
+    align-self: flex-end;
+    transition: 0.3s;
+}
+
+#post-news:hover
+{
+    cursor: pointer;
+    scale: 1.05;
+}
+
+#form
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.new-con-two
+{
+    height: auto;
 }

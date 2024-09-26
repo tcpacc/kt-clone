@@ -1,7 +1,23 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
+const News = require('./models/news');
 
 const app = express();
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+const dbURI = 'mongodb+srv://qwekweiing:2rKMFbGL4ucnOF9M@mycluster.bk0bj.mongodb.net/nodejs-app?retryWrites=true&w=majority&appName=MyCluster';
+mongoose.connect(dbURI)
+        .then(result => {
+          console.log('connected to db');
+          const PORT = 3000;
+          app.listen(PORT, () => {
+              console.log(`Server is running on http://127.0.0.1:${PORT}`);
+          });
+        })
+        .catch(err => console.log(err));
 
 app.engine('handlebars', handlebars.engine());
 app.set('view engine', 'handlebars');
@@ -12,12 +28,35 @@ app.get('/', (req,res) => {
     res.render('index');
 });
 
+app.get('/add-news', (req, res) => {
+    res.render('add-news')
+})
+
+app.post("/post-news",urlencodedParser, (req,res) => {
+    const news = new News(req.body)
+
+    news.save()
+    .then(result => {
+        res.redirect("/whats-new")
+    })
+    .catch(err => {
+        console.log(err);
+    });
+})
+
 app.get('/support', (req,res) => {
     res.render('support');
 });
 
 app.get('/whats-new', (req,res) => {
-    res.render('whats-new');
+    News.find().lean()
+        .then(result => {
+            data = result;
+            res.render('whats-new',{data});
+        })
+        .catch(err => {
+            console.log(err);
+        })
 });
 
 app.get('/games', (req,res) => {
@@ -109,8 +148,3 @@ app.get('/games', (req,res) => {
 app.use((req,res) => {
     res.status(404).send('<h1>Error 404</h1>');
 });
-
-const PORT =3000;
-app.listen(PORT, () => {
-    console.log(`server is running on http://127.0.0.1:${PORT}`)
-})
